@@ -1,0 +1,866 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --background:#f2eee8;
+    --boxShadow: #BDCDD6;
+    --textColor: #20262E;
+    --textColorTwo:#A7727D;
+    --iconColor:#6096B4;
+    --plus:#5D3891;
+    --logoColor:#913175;
+    --textHunt: #5d5959;
+}
+
+
+body{
+    background: var(--background);
+}
+
+.container{
+    background: var(--background);
+    display: grid;
+    width: 96%;
+    height: 100vh;
+    gap: 1.8rem;
+    margin: 0 auto;
+    grid-template-columns: 14rem auto 23rem;
+}
+
+
+.right{
+    background-color: transparent;
+    width: 100%;
+    height: 100vh;
+    display: inline;
+}
+
+.right .top{
+    display: flex;
+    padding: 12px 0;
+    align-items: center;
+    margin: 0 5px;
+
+}
+
+.right .top .logo i{
+    color: var(--logoColor);
+    font-size: 29px;
+}
+
+.right .top .logo img {
+    width: 30px;
+}
+
+.right .top .logoName{
+    margin: 0 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.right .top .logoName span{
+    color: var(--logoColor);
+}
+
+.container .right .top .close {
+    font-size: 18px;
+    margin: 0 90px;
+    cursor: pointer;
+    display: none;
+}
+
+.right .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    margin: 5px 5px;
+}
+
+.right .menu ul li {
+    list-style: none;
+    margin:  17px 0;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    transition: all .30s ease;
+    padding: 12px 17px;
+}
+
+.right .menu ul li small {
+    font-size: 15px;
+    color: var(--textHunt);
+    margin: 0 10px;
+    transition: all .30s ease;
+
+}
+
+.right .menu ul li i{
+    font-size: 18px;
+    color: var(--textHunt);
+    transition: all .30s ease;
+}
+
+
+.right .menu ul li .counter{
+    background-color: rgba(249, 72, 72, 0.914);
+    padding: 1px 9px;
+    border-radius: 7px;
+    color: white;
+    transition: all .30s ease;
+    margin: 0 10px;
+}
+
+
+.right .menu ul li:hover i ,
+.right .menu ul li:hover small {
+    transform: translateX(7px);
+    color: var(--logoColor);
+}
+
+.right .menu ul li:hover .counter{
+    transform: translateX(7px);
+    background-color: rgb(255, 53, 53);
+}
+
+.right .menu .active{
+    background-color: whitesmoke;
+        position: relative;
+    }
+
+    .right .menu .active::before{
+        content: " ";
+        position: absolute;
+        height: 44px;
+        width: 10px;
+        top: 0;
+        left: -10px;
+        background-color: var(--logoColor);
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    main .top{
+        display: grid;
+        grid-template-columns:repeat(3,1fr);
+        gap: 50px;
+    }
+
+    main .top h1{
+        padding: 10px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 24px;
+    }
+
+    main .top input{
+        border-radius: 5px ;
+        border-color: transparent;
+        color: black;
+        padding: 3px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+
+    main .top .menuIcon {
+        display: none;
+        font-size: 14px;
+        margin: 20px 0;
+        cursor: pointer;
+        transition: all .30s linear ;
+    }
+
+
+    main .top .menuIcon:hover{
+        transform: scale(1.09)
+    }
+
+main .top .secondCode{
+    margin: 5px 0 0 10px;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    display: none;
+}
+
+
+main .top .secondCode .darkMood{
+    width: 60px;
+    height: max-content;
+    background-color: var(--iconColor);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
+    padding: 3px 0;
+    cursor: pointer; 
+}
+
+
+.selectMood{
+    background-color: var(--textColorTwo);
+    color: white;
+    height:max-content;
+    width: 30px;
+    border-radius: 6px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+
+
+
+main .top .secondCode .admin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .top .secondCode .admin p {
+    font-size: 13px;
+    color: var(--textHunt);
+}
+
+main .top .secondCode .admin p span {
+    color: black;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main .top .secondCode .admin .image img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 10px;
+}
+
+
+
+
+
+main .container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 18px 0;
+    max-height: 230px;
+    padding: 5px;
+    width: 100%;
+}
+
+main .container .itemOne , 
+main .container .itemTwo,
+main .container .itemThree{
+    background-color: white;
+    max-height: 200px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-evenly;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px 1px var(--boxShadow);
+    cursor: pointer;
+    transition: all .40s ease;
+}
+
+
+main .container div .content p{
+    font-size: 14px;
+}
+
+
+
+main .container .itemOne:hover , 
+main .container .itemTwo:hover,
+main .container .itemThree:hover{
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+
+
+main .container .itemOne .content , 
+main .container .itemTwo .content,
+main .container .itemThree .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+main .container .progress{
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 5px;
+}
+
+
+
+main .container .progress svg circle {
+    fill: none;
+    stroke: var(--iconColor);
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform: translate(20px , 10px );
+    stroke-dasharray: 110;
+    stroke-dashoffset: 92;
+}
+
+
+main .container .itemOne svg circle {
+    stroke-dasharray: -30;
+    stroke-dashoffset: 280;
+}
+
+
+main .container .itemTwo svg circle {
+    stroke-dasharray: 110;
+    stroke-dashoffset: 480;
+}
+
+main .container .itemThree svg circle {
+    stroke-dasharray: -50;
+    stroke-dashoffset: 280;
+}
+
+
+
+main .container .progress .number p{
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main .container .progress .number {
+    position: absolute;
+    top: 33px;
+    left: 45px;
+    width: fit-content;
+    height: fit-content;
+}
+
+main .container .icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--iconColor);
+    padding: 11px;
+    color: white;
+}
+
+
+main .container .icon i {
+    font-size: 21px;
+}
+
+main .container .content p {
+    color: var(--textHunt);
+    font-size: 1px;
+    text-transform: lowercase;
+}
+
+main .table {
+    height: max-content;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 15px 1px var(--boxShadow);
+    border-radius: 15px;
+    padding: 18px;
+
+}
+
+main h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    padding: 15px 0;
+}
+
+main .table table{
+    width: 100%;
+}
+
+
+main .table table tr td {
+    padding: 10px 50px;
+}
+
+main .table table thead tr td {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+main .table table tbody tr td {
+    color: var(--textHunt);
+    font-size: 13px;
+    border-bottom: 1px solid var(--boxShadow);
+}
+
+main .table table tbody .lastItem td{
+    border-bottom:none;
+}
+
+main .show{
+    align-items: center;
+    margin: auto;
+    color: #5D3891;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+}
+
+main .show:hover{
+    animation-name: animation;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    cursor: pointer;
+}
+
+@keyframes animation{
+    0%   {transform: translateY(-1px);}
+    25%  {transform: translateY(-3px);}
+    50%  {transform: translateY(-3px);}
+    100% {transform: translateY(-1px);}
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.left .top {
+    margin: 5px 0 0 10px;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.left .top .darkMood{
+    width: 60px;
+    height: max-content;
+    background-color: var(--iconColor);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
+    padding: 3px 0;
+    cursor: pointer; 
+}
+
+.selectMood{
+    background-color: var(--textColorTwo);
+    color: white;
+    height:max-content;
+    width: 30px;
+    border-radius: 6px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+
+.left .top .admin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left .top .admin p {
+    font-size: 13px;
+    color: var(--textHunt);
+}
+
+.left .top .admin p span {
+    color: black;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.left .top .admin .image img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 10px;
+}
+
+
+.left h3 {
+    padding: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+}
+
+.left .recentUpdates{
+    height: 230px;
+    width: 100%;
+    background:white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px 1px var(--boxShadow);
+}
+
+
+.left .recentUpdates .baseItem{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 18px;
+}
+
+.left .recentUpdates .item {
+    display: flex;
+    flex-direction: row;
+}
+
+.left .recentUpdates .item img{
+    width: 40px;
+    height: 40%;
+    border-radius: 50%;
+}
+
+
+.left .recentUpdates .item p{
+    margin: 0 15px;
+}
+
+.left .recentUpdates .item p span{
+    color: var(--textHunt);
+    font-size: 13px;
+}
+
+.left .recentUpdates .baseItem small{
+    color: var(--textHunt);
+    margin: 1px 46px;
+    font-size: 11px;
+}
+
+
+.left .salesAnalytics{
+    height: fit-content;
+    width: 100%;
+    background:transparent;
+    border-radius: 12px;
+ 
+}
+
+.left .salesAnalytics .item {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 4px 10px 1px var(--boxShadow);
+    padding: 25px;
+    margin: 15px 0;
+    transition: all .40s ease;
+}
+
+
+.left .salesAnalytics .item:hover{
+    transform: translateY(-3px);
+}
+
+
+.left .salesAnalytics .item .icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--textColorTwo);
+    padding: 11px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left .salesAnalytics .item .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.left .salesAnalytics .item .text h3{
+    font-size: 14px;
+}
+
+
+.left .salesAnalytics .item .text small{
+    margin-top: -5px;
+    font-size: 11px;
+    color: var(--textHunt);
+}
+
+.left .salesAnalytics .item .numbers{
+    display: grid;
+    grid-template-columns: 3rem 2rem;
+}
+
+.left .salesAnalytics .item .numbers .first{
+    color: green;
+}
+
+
+.left .salesAnalytics .item .numbers .second{
+    font-weight: bold;
+}
+
+.left .salesAnalytics .addProduct {
+    border-style: dashed;
+    border-width: 1;
+    border-color: var(--textHunt);
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 4px 10px 1px var(--boxShadow);
+    cursor: pointer;
+    padding: 25px;
+    margin: 15px 0;
+    transition: all .40s ease;
+}
+
+.left .salesAnalytics .addProduct:hover{
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px 2px var(--boxShadow);
+    background: var(--textColorTwo);
+    color: white;
+    border-color: transparent;
+}
+
+.left .salesAnalytics .addProduct h4 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+
+
+@media only screen and (max-width: 1500px){
+    .container{
+        grid-template-columns: auto auto auto;
+    }
+}
+
+
+@media only screen and (max-width: 1400px) {
+.right .menu ul li small{
+        display: none;
+    }
+
+    
+.container{
+    grid-template-columns: auto auto auto;
+    
+}
+
+.left .salesAnalytics .item .text h3 {
+    font-size: 12px;
+}
+
+
+
+  }
+
+
+@media only screen and (max-width: 1270px) {
+
+main .container div .content p{
+    font-size: 12px;
+}
+
+
+main .container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+main .container .itemOne , 
+main .container .itemTwo,
+main .container .itemThree{
+    max-height: 250px;
+    max-width: 100%;
+    transition: all .40s ease;
+}
+
+
+main .table {
+    margin: 15px 0 ;
+    height: max-content;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 15px 1px var(--boxShadow);
+    border-radius: 15px;
+    padding: 18px;
+
+}
+
+
+main .title{
+    margin-top: 320px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    padding: 15px 0;
+}
+
+
+.left .salesAnalytics .item{
+    padding: 20px;
+}
+
+.left .salesAnalytics .item .text h3 {
+    font-size: 10px;
+}
+
+.left .addProduct{
+    font-size: 13px;
+}
+
+
+.left .recentUpdates .item img{
+    width: 30px;
+    height: 30%;
+    border-radius: 50%;
+}
+
+
+
+   
+
+}
+
+
+@media only screen and (max-width: 1260px) {
+
+    .right{
+        width: 4rem;
+    }
+
+    .right .top{
+        display: none;
+    }
+
+    .right .menu ul li {
+        width: 80%;
+    }
+
+    .right .menu ul li .counter{
+        width: 13px;
+        font-size: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .table table tr td {
+        padding: 15px;
+    }
+
+    main .show{
+        margin: auto;
+        text-align: center;
+        padding-bottom:25px ;
+    }
+
+    main .table{
+        width: 155%;
+    }
+
+    main .table table tr td {
+        padding: 10px;
+    }
+
+    main .show{
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 730px){
+   
+    .right{
+        display: none;
+    }
+
+    svg{
+        width: 150px;
+    }
+        
+    .container{
+        grid-template-columns: auto;
+        
+    }
+
+    .left .top{
+        display: none;
+    }
+
+    main .table{
+        width: 100%;
+    }
+
+    .right{
+        display: none;
+        position: fixed;
+        z-index: 3;
+        width: 16rem;
+        background-color: white;
+        left: 0;
+        transition: all .50s ease;
+    }
+
+  
+    .right .menu ul li small {
+        display: block;
+    }
+
+    .container .right .top .close {
+        display: block;
+    }
+
+        
+    main .top .secondCode{
+        display: block;
+        margin: 5px 0 0 10px;
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    
+    }
+
+    main .top .menuIcon{
+        display: inline;
+    }
+
+}
+
